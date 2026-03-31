@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Interview Practice</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="welcome-screen">
+            <div class="welcome-content">
+                <div class="welcome-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h1>Master Your Interview</h1>
+                <p>Sharpen your skills with our AI-powered interview simulator. Choose your topic, set your difficulty, and start practicing today.</p>
+                <div class="welcome-actions">
+                    <button id="start-interview-btn" class="primary-btn">Start Practice Session</button>
+                </div>
+                <div class="welcome-features">
+                    <span><i class="fas fa-check-circle"></i> Real-time Feedback</span>
+                    <span><i class="fas fa-check-circle"></i> AI Evaluation</span>
+                    <span><i class="fas fa-check-circle"></i> Practical Questions</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Window Bar (Hidden initially) -->
+        <header id="app-header" class="window-header hidden">
+            <div class="window-title">AI Interview Practice</div>
+            <div class="window-controls">
+                <i class="fas fa-minus"></i>
+                <i class="fas fa-square"></i>
+                <i class="fas fa-times"></i>
+            </div>
+        </header>
+
+        <!-- Main Workspace (Hidden initially) -->
+        <main id="app-main" class="main-content hidden">
+            <!-- Left Header -->
+            <div class="workspace-header">
+                <div class="config-controls">
+                    <div class="control-group">
+                        <label>Topic:</label>
+                        <select id="topic-select">
+                            <option value="General">General (Behavioral)</option>
+                            <option value="Python">Python</option>
+                            <option value="Java">Java</option>
+                            <option value="React">React</option>
+                            <option value="Data Science">Data Science</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label>Difficulty:</label>
+                        <select id="difficulty-select">
+                            <option value="Easy">Easy</option>
+                            <option value="Medium" selected>Medium</option>
+                            <option value="Hard">Hard</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-and-sidebar">
+                <!-- Chat Section -->
+                <section class="chat-section">
+                    <div id="chat-messages" class="chat-messages">
+                        <!-- Messages will be injected here -->
+                    </div>
+                </section>
+
+                <!-- Sidebar Section -->
+                <aside class="sidebar">
+                    <div class="feedback-card">
+                        <h3>Feedback Summary</h3>
+                        
+                        <div class="score-container" id="score-box">
+                            <div class="score-label">Score:</div>
+                            <div class="score-value" id="current-score">0 / 10</div>
+                        </div>
+
+                        <div class="feedback-section">
+                            <h4>Strengths:</h4>
+                            <ul id="strengths-list" class="checklist">
+                                <!-- Strengths here -->
+                            </ul>
+                        </div>
+
+                        <div class="feedback-section">
+                            <h4>Areas for Improvement:</h4>
+                            <ul id="improvements-list" class="info-list">
+                                <!-- Improvements here -->
+                            </ul>
+                        </div>
+
+                        <div class="feedback-section">
+                            <h4>Previous Scores</h4>
+                            <div class="chart-container">
+                                <div class="bar-chart" id="previous-scores-chart">
+                                    <!-- Bars here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="performance-summary">
+                            <div class="perf-row">
+                                <span class="label">Recent Performance:</span>
+                                <span class="value green" id="recent-perf">N/A</span>
+                            </div>
+                            <div class="perf-row tip">
+                                <strong>Next Tip:</strong>
+                                <span id="next-tip">"Select a topic and start practice!"</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Input bar -->
+            <footer class="input-area">
+                <input type="text" id="user-input" placeholder="Type your answer..." autocomplete="off">
+                <button id="send-btn" class="send-button">Send</button>
+            </footer>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
